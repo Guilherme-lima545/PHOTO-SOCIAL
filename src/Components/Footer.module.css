@@ -1,0 +1,14 @@
+.footer {
+  background: red;
+  padding: 3rem 1rem 0 1rem;
+  height: 10rem;
+  text-align: center;
+  color: black;
+  text-transform: uppercase;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: large;
+}
+
+.footer p {
+  margin-top: 1rem;
+}

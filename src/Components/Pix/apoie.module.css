@@ -1,0 +1,19 @@
+.titulo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+.paragrafo {
+  text-align: center;
+  font-size: larger;
+}
+
+.pix  {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center;
+}
