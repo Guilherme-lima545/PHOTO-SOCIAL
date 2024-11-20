@@ -24,7 +24,7 @@ function App() {
     <main className='appbody'>
       <Routes>
 
-      <Route path='/' element={<Home />} />
+      <Route path='/PHOTO-SOCIAL' element={<Home />} />
       <Route path='login/*' element={<Login />} />
       <Route path='/apoie' element={<Apoie />} />
       <Route path='conta/*' element={<ProtectedRoute> <User />  </ProtectedRoute>} />
