@@ -25,11 +25,11 @@ function App() {
       <Routes>
 
       <Route path='/PHOTO-SOCIAL' element={<Home />} />
-      <Route path='login/*' element={<Login />} />
-      <Route path='/apoie' element={<Apoie />} />
-      <Route path='conta/*' element={<ProtectedRoute> <User />  </ProtectedRoute>} />
-      <Route path='foto/:id' element={<Photo />} />
-      <Route path='perfil/:user' element={<UserProfile />} />
+      <Route path='/PHOTO-SOCIAL/login/*' element={<Login />} />
+      <Route path='/PHOTO-SOCIAL/apoie' element={<Apoie />} />
+      <Route path='/PHOTO-SOCIAL/conta/*' element={<ProtectedRoute> <User />  </ProtectedRoute>} />
+      <Route path='/PHOTO-SOCIAL/foto/:id' element={<Photo />} />
+      <Route path='/PHOTO-SOCIAL/perfil/:user' element={<UserProfile />} />
       <Route path='*' element={<NotFound />} />
       </Routes>
       </main>

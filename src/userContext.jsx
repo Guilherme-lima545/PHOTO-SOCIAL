@@ -40,7 +40,7 @@ async function userLogin(username, password) {
   const {token} = await tokenRes.json();
   window.localStorage.setItem('token', token);
   await getUser(token);
-  navigate('/conta');
+  navigate('PHOTO-SOCIAL/conta');
   } catch(err) {
     setError(err.message);
     setLogin(false);

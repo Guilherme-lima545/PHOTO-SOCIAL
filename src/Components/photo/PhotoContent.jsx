@@ -17,11 +17,11 @@ const PhotoContent = ({data, single}) => {
         <div className={styles.details}>
           <div>
             <p className={styles.author}>
-              {user.data && user.data.username === photo.author ? <PhotoDelete id={photo.id} /> :( <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link> ) } 
+              {user.data && user.data.username === photo.author ? <PhotoDelete id={photo.id} /> :( <Link to={`/PHOTO-SOCIAL/perfil/${photo.author}`}>@{photo.author}</Link> ) } 
               <span className={styles.visualizacoes}>{photo.acessos}</span>
               </p>
               <h1 className='title'>
-                <Link to={`/foto/${photo.id}`}> {photo.title}</Link>
+                <Link to={`/PHOTO-SOCIAL/foto/${photo.id}`}> {photo.title}</Link>
               </h1>
               <ul className={styles.attributes}>
                 <li>{photo.idade} anos </li>

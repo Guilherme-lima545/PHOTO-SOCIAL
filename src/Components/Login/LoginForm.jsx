@@ -35,11 +35,11 @@ const LoginForm = () => {
       {loading ? (<Button disabled> Carregando </Button>)  : (<Button> Entrar </Button>)}
       <Erro error={error && "Dados Incorretos."} />
     </form>
-    <Link className={style.perdeu} to="/login/perdeu"> Putz! Esqueci a senha </Link>
+    <Link className={style.perdeu} to="/PHOTO-SOCIAL/login/perdeu"> Putz! Esqueci a senha </Link>
       <div className={style.cadastro}>
         <h2 className={style.subtitle}> Cadastre-se </h2>
         <p> Novo por aqui? Cadastre-se aqui. </p>
-        <Link className={stylebt.button} to='/login/criar'> Cadastro </Link>
+        <Link className={stylebt.button} to='/PHOTO-SOCIAL/login/criar'> Cadastro </Link>
       </div>
     </section>
   )

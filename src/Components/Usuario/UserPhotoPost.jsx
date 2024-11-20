@@ -20,7 +20,7 @@ const UserPhotoPost = () => {
   
 
   React.useEffect(() => {
-    if(data) navigate('/conta');
+    if(data) navigate('/PHOTO-SOCIAL/conta');
   }, [data, navigate])
 
   function handleSubmit(event) {

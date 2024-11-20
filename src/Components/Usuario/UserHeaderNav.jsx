@@ -25,7 +25,7 @@ const UserHeaderNav = () => {
 
   function handleLogout() {
     userLogout();
-    navigate('/login')
+    navigate('/PHOTO-SOCIAL/login')
   }
   
   return (
@@ -38,9 +38,9 @@ const UserHeaderNav = () => {
     ></button> } 
     
     <nav className={`${mobile ? styles.navMobile : styles.nav} ${mobileMenu && styles.navMobileActive}`}>
-      <NavLink to="/conta" end> <Feed /> {mobile && "Minhas Fotos"} </NavLink>
-      <NavLink to="/conta/estatisticas"> <Dados /> {mobile && "Estatisticas"}  </NavLink>
-      <NavLink to="/conta/postar"> <Add /> {mobile && "Adicionar foto"}  </NavLink>
+      <NavLink to="/PHOTO-SOCIAL/conta" end> <Feed /> {mobile && "Minhas Fotos"} </NavLink>
+      <NavLink to="/PHOTO-SOCIAL/conta/estatisticas"> <Dados /> {mobile && "Estatisticas"}  </NavLink>
+      <NavLink to="/PHOTO-SOCIAL/conta/postar"> <Add /> {mobile && "Adicionar foto"}  </NavLink>
      <button onClick={handleLogout}> <Sair /> {mobile && "Sair"} </button>
     </nav>
     </>
