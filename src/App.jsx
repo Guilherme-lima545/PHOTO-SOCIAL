@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import React from 'react'
 import Cabecalho from './Components/Cabecalho'
@@ -13,6 +12,7 @@ import ProtectedRoute from './Components/Helper/ProtectedRoute'
 import Photo from './Components/photo/Photo'
 import UserProfile from './Components/Usuario/UserProfile'
 import NotFound from './Components/NotFound'
+
 
 
 function App() {

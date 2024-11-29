@@ -53,6 +53,7 @@
 
 @media (max-width: 64rem) {
   .photo {
+    max-width: 65%;
     height: auto;
     max-height: calc(100vh - 4rem);
     overflow-y: auto;
@@ -106,4 +107,14 @@
   width: 2px;
   background: #333;
   margin-top: 5px;
+}
+
+@media (max-width:1022px) {
+  .photo {
+      max-width: 65%;
+    } 
+
+    .photo .img {
+      max-width: 100%;
+    }
 }
