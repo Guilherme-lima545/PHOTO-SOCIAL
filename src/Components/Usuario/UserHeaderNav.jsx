@@ -1,17 +1,18 @@
 import React from 'react'
 import { NavLink, useLocation, useNavigate } from 'react-router-dom'
-import { UserContext } from '../../userContext'
 import Feed from '../../Assets/feed.svg?react';
 import Dados from '../../Assets/estatisticas.svg?react';
 import Add from '../../Assets/adicionar.svg?react';
 import Sair from '../../Assets/sair.svg?react';
 import styles from "./UserHeaderNav.module.css"
 import UserMedia from '../../Hooks/UserMedia';
+import { useDispatch } from 'react-redux';
+import { userLogout } from '../../store/user';
 
 
 
 const UserHeaderNav = () => {
-  const {userLogout} = React.useContext(UserContext);
+  const dispatch = useDispatch()  
   const navigate = useNavigate();
   const mobile = UserMedia('(max-width: 40rem)');
   const [mobileMenu, setMobileMenu] = React.useState(false)
@@ -41,7 +42,7 @@ const UserHeaderNav = () => {
       <NavLink to="/PHOTO-SOCIAL/conta" end> <Feed /> {mobile && "Minhas Fotos"} </NavLink>
       <NavLink to="/PHOTO-SOCIAL/conta/estatisticas"> <Dados /> {mobile && "Estatisticas"}  </NavLink>
       <NavLink to="/PHOTO-SOCIAL/conta/postar"> <Add /> {mobile && "Adicionar foto"}  </NavLink>
-     <button onClick={handleLogout}> <Sair /> {mobile && "Sair"} </button>
+     <button onClick={() => dispatch(userLogout())}> <Sair /> {mobile && "Sair"} </button>
     </nav>
     </>
   )

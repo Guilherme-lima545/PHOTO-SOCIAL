@@ -1,25 +1,32 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Cabecalho from './Components/Cabecalho'
 import Footer from './Components/Footer'
 import Home from './Components/Home'
 import Login from './Components/Login/Login'
 import './App.css'
 import Apoie from './Components/Pix/Apoie'
-import { UserStorage } from './userContext'
 import User from './Components/Usuario/User'
 import ProtectedRoute from './Components/Helper/ProtectedRoute'
 import Photo from './Components/photo/Photo'
 import UserProfile from './Components/Usuario/UserProfile'
 import NotFound from './Components/NotFound'
+import { useDispatch } from 'react-redux'
+import { autoLogin } from './store/user'
 
 
 
 function App() {
+ const dispatch = useDispatch()
+
+ useEffect(() => {
+  dispatch(autoLogin())
+ }, [dispatch])
+
+
   return (
     <div className='App'>
     <BrowserRouter>
-    <UserStorage> 
     <Cabecalho />
     <main className='appbody'>
       <Routes>
@@ -34,7 +41,6 @@ function App() {
       </Routes>
       </main>
     <Footer />
-    </UserStorage> 
     </BrowserRouter>
     </div>
   )

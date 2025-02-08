@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Input from '../Forms/Input'
 import useForm from '../../Hooks/useForm'
-import useFetch from '../../Hooks/useFetch'
 import Button from '../Forms/Button'
 import Error from '../Helper/Erro'
 import styles from './UserPhotoPost.module.css'
-import { PHOTO_POST } from '../../api'
 import { useNavigate } from 'react-router-dom'
 import Head from '../Helper/Head'
+import { useDispatch, useSelector } from 'react-redux'
+import { photoPost } from '../../store/Photopost'
 
 
 
@@ -15,11 +15,14 @@ const UserPhotoPost = () => {
   const nome = useForm();
   const idade  = useForm("number");
   const [img, setImg] = React.useState({});
-  const { data, error, loading, request } = useFetch();
+  const { data, error, loading } = useSelector(state => state.photo);
+  const {token} = useSelector(state => state.token.data)
   const navigate = useNavigate();
+
+  const dispatch = useDispatch()
   
 
-  React.useEffect(() => {
+  useEffect(() => {
     if(data) navigate('/PHOTO-SOCIAL/conta');
   }, [data, navigate])
 
@@ -34,10 +37,8 @@ const UserPhotoPost = () => {
     
     
 
-    const token = window.localStorage.getItem('token');
-    const {url, options} = PHOTO_POST(formData, token);
-    request(url, options);
-    
+    dispatch(photoPost({formData, token}))
+    navigate('/PHOTO-SOCIAL/conta');
   }
 
   function handleImgChange({target}) {

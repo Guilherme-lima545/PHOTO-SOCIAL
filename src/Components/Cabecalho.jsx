@@ -2,13 +2,13 @@ import React from 'react'
 import styles from './Header.module.css'
 import { Link } from 'react-router-dom'
 import Photo from '../Assets/Photosocial.svg?react';
-import { UserContext } from '../userContext';
 import UserMedia from '../Hooks/UserMedia';
+import { useSelector } from 'react-redux';
 
 const Cabecalho = () => {
   const mobile = UserMedia('(max-width: 554px)')
-  const { data } = React.useContext(UserContext);
-  const [mobileMenu, setMobileMenu] = React.useState(false)
+const {data} = useSelector(state => state.user)
+ const [mobileMenu, setMobileMenu] = React.useState(false)
 
 
   if(mobile) { 
