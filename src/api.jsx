@@ -1,4 +1,4 @@
-export const API_URL = "https://azure-alpaca-844293.hostingersite.com/wp-json";
+export const API_URL = "https://api05.byethost3.com/wp-json";
 
 export function TOKEN_POST(body) {
   return {
